@@ -14,7 +14,11 @@ namespace Project_test
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("New project");
+            FarmingController controller = new FarmingController();
+
+            controller.Menu();
+            controller.UserCommand();    
+               
         }
     }
 }
