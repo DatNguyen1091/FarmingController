@@ -64,7 +64,7 @@ namespace Project_test
                 else return;
 
                 for (int i = 0; i < number; i++){
-                    animalController.Add(newAnimal);
+                    animalController.Remove(newAnimal);
                 }
             }
             else {
@@ -167,34 +167,62 @@ namespace Project_test
 
         // execute user command
         public void UserCommand()
-        {
-            int chon1;
-            int chon2;           
-            do
-            {                
-                chon2 = int.Parse(Console.ReadLine());
-                switch (chon2)
+        {                                 
+                string select = Console.ReadLine();
+                switch (select)
                 {
-                    case 1: 
-                        
+                    case "add": 
+                        Console.WriteLine("Animal name you want to add: ");
+                        int num = Convert.ToInt32(Console.ReadLine()); 
+                        if (num == 1){ 
+                            Console.WriteLine("Add: ");
+                            int amount = Convert.ToInt32(Console.ReadLine());                                                                                    
+                            AddAnimal("DairyCow", amount);
+                            TotalAmount();
+                        } else if (num == 2){
+                            Console.WriteLine("Add: ");
+                            int amount = Convert.ToInt32(Console.ReadLine());                                                                                    
+                            AddAnimal("Chicken", amount);
+                            TotalAmount();
+                        } else if (num == 3){
+                            Console.WriteLine("Add: ");
+                            int amount = Convert.ToInt32(Console.ReadLine());                                                                                    
+                            AddAnimal("Pig", amount);
+                            TotalAmount();
+                        } else if(num == 4){
+                            Console.WriteLine("Add: ");
+                            int amount = Convert.ToInt32(Console.ReadLine());                                                                                    
+                            AddAnimal("Dog", amount);
+                            TotalAmount();
+                        } else Console.WriteLine("Again!");                                                                                   
                         break;
 
-                    case 2:
-                        
-                        break;
-
-                    case 3:
-                        
-                        break;
-
-                    case 4:
-                        break;
-                    default:
-                        Console.WriteLine("vui long nhap lai");
-                        break;
+                    case "remove":
+                         Console.WriteLine("Animal name you want to remove: ");
+                        int n = Convert.ToInt32(Console.ReadLine()); 
+                        if (n == 1){ 
+                            Console.WriteLine("remove: ");
+                            int amount = Convert.ToInt32(Console.ReadLine());                                                                                    
+                            RemoveAnimal("DairyCow", amount);
+                            TotalAmount();
+                        } else if (n == 2){
+                            Console.WriteLine("remove: ");
+                            int amount = Convert.ToInt32(Console.ReadLine());                                                                                    
+                            RemoveAnimal("Chicken", amount);
+                            TotalAmount();
+                        } else if (n == 3){
+                            Console.WriteLine("remove: ");
+                            int amount = Convert.ToInt32(Console.ReadLine());                                                                                    
+                            RemoveAnimal("Pig", amount);
+                            TotalAmount();
+                        } else if(n == 4){
+                            Console.WriteLine("remove: ");
+                            int amount = Convert.ToInt32(Console.ReadLine());                                                                                    
+                            RemoveAnimal("Dog", amount);
+                            TotalAmount();
+                        } else Console.WriteLine("Again!");
+                        break;                                     
                 }
-
-            } while (chon2 != 4);
             Console.ReadLine();
         }
     }

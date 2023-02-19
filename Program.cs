@@ -15,10 +15,11 @@ namespace Project_test
         static void Main(string[] args)
         {
             FarmingController controller = new FarmingController();
-
             controller.Menu();
+            while(true){ 
             controller.UserCommand();    
-               
+            }
+            Console.ReadKey();
         }
     }
 }
